@@ -32,5 +32,5 @@
 # UEFI_Aware_OS_pres
 How the OS and UEFI Work together, Requirements, Secure Boot, SMM, coreboot
 
-To see the Slides goto https://gitpitch.com/Laurie0131/UEFI_Aware_OS_pres/master#/
+To see the Slides goto https://gitpitch.com/tianocore-training/UEFI_Aware_OS_pres/master#/
 
