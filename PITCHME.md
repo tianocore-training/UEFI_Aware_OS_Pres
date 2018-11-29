@@ -767,9 +767,8 @@ Unauthorized Signing certificates - Black list
 
 - Shell Dmpstore command show the variable "SecureBoot"
 
+---
 
----?image=/assets/images/slides/Slide_blank.jpg
-<!-- .slide: data-transition="none" -->
 @title[Security Package Project Page]
 <p align="right"><span class="gold" ><b>Security Package Project Page</b></span><span style="font-size:0.8em" ><a href="https://github.com/tianocore/tianocore.github.io/wiki/SecurityPkg 
 "> Wiki Link</a></span></p>
@@ -783,32 +782,27 @@ Unauthorized Signing certificates - Black list
      </ul>
 </div>
 <div class="right1">
-   <p align="center"><span style="font-size:01.2em" ><font color="yellow"><b>How To Enable Secure Boot Service</b></font></span></p>
+   <p align="center"><span style="font-size:01.2em" ><font color="yellow"><b> </b></font></span></p>
 </div>
 
-Note:
-
-+++?image=/assets/images/slides/Slide50.JPG
-@title[Security Package Project Page]
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-<p align="right"><span class="gold" ><b>Security Package Project Page</b></span><span style="font-size:0.8em" ><a href="https://github.com/tianocore/tianocore.github.io/wiki/SecurityPkg 
-"> Wiki Link</a></span></p>
+@snap[north-east span-40 ]
 <br>
-<div class="left1">
-     <ul>
-        <li><span style="font-size:0.8em" >Wiki Link: <a href="https://github.com/tianocore/tianocore.github.io/wiki/How-to-Enable-Security#HOW_TO_ENABLE_SECURE_BOOT_SERVICE">How-to-Enable-Security</a></span></span></li>
-        <li><span style="font-size:0.8em" >PDF <a href="https://github.com/tianocore-docs/Docs/raw/master/User_Docs/SigningUefiImages%20-v1dot31.pdf">How to Sign UEFI Images V1.31</a></span></span></li>
-        <li><span style="font-size:0.8em" >Build command line switch - `SECURE_BOOT_ENABLE = TRUE`</span></li>
-        <li><span style="font-size:0.8em" >Install the `CryptoPkg OpensslLib` : <a href="https://github.com/tianocore/edk2/blob/master/CryptoPkg/Library/OpensslLib/OpenSSL-HOWTO.txt">OpenSSL-HOWTO.txt</a></span></li>
-     </ul>
-</div>
-<div class="right1">
-   <span style="font-size:01.5em" ><font color="yellow"><b>      </b></font></span>
-</div>
+<br>
+<br>
+<br>
+<p align="center"><span style="font-size:01.2em" ><font color="yellow"><b>How To Enable Secure Boot Service</b></font></span></p>
+@snapend
 
+@snap[north-east span-45 fragment]
+<br>
+<br>
+<br>
+<br>
+![wikiPic](/assets/images/wikiPic.png)
+@snapend
 
 Note:
+
 
 
 
@@ -1020,7 +1014,7 @@ Note:
 <!-- .slide: data-transition="none" --> 
 @title[Why MMI Vulnerabilities ) 02]
 <p align="right"><span class="gold" ><b>Why are Software MMI Vulnerabilities Dangerous?</b></span></p>
-<br>
+<b><i>@color[yellow](Because . . .)</i></b><br>
 <span style="font-size:0.9em" >Software MMIs can be asked to perform: </span>
 <div class="left1">
      <ul>
@@ -1039,67 +1033,43 @@ Note:
 
 same as Slide 
 
+
 ---
 @title[UEFI Platform Firmware Assumptions ]
-<!-- .slide: data-transition="none" --> 
 <p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span></p>
+
+@snap[north-west span-100 fragment]
+@css[text-yellow](&nbsp;<br><br>)
  @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;Memory protected by the OS cannot be snooped while<br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in use by the OS application or OS driver</span><br>
  <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- No protection from MM, VMs or hardware snooping</span><br>
+@snapend
+@snap[west span-100 fragment]
+ @fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Flash protected by hardware cannot be modified <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outside of MM after the end of DXE </span><br> 
+ <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about snooping since no secrets are stored in BIOS</span><br>
+ <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about flash-altering hardware attacks</span><br>
+@snapend
+@snap[south-west span-100 fragment]
+ @fa[circle gp-bullet-yellow]<span style="font-size:0.9em">&nbsp;&nbsp;Software MMIs cause CPUs to enter SMM in SMRAM <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at a fixed location</span>
+<br>
+<br>
+<br>
+<br>
+@snapend
+@snap[south-west span-100 fragment]
+<br>
+<br>
+ @fa[circle gp-bullet-ltgreen]<span style="font-size:0.9em">&nbsp;&nbsp;MMRAM cannot be altered from outside SMM </span>
+<br>
+<br>
+@snapend
+
 
 Note:
-Same as slide
 
-
-+++
-@title[UEFI Platform Firmware Assumptions 02 ]
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" --> 
-<p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span></p>
- @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;Memory protected by the OS cannot be snooped while<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in use by the OS application or OS driver</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- No protection from MM, VMs or hardware snooping</span><br>
- @fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Flash protected by hardware cannot be modified <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outside of MM after the end of DXE </span><br> 
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about snooping since no secrets are stored in BIOS</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about flash-altering hardware attacks</span><br>
-
-
-+++
-@title[UEFI Platform Firmware Assumptions 02 ]
-<p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span></p>
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" --> 
- @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;Memory protected by the OS cannot be snooped while<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in use by the OS application or OS driver</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- No protection from MM, VMs or hardware snooping</span><br>
- @fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Flash protected by hardware cannot be modified <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outside of MM after the end of DXE </span><br> 
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about snooping since no secrets are stored in BIOS</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about flash-altering hardware attacks</span><br>
- @fa[circle gp-bullet-yellow]<span style="font-size:0.9em">&nbsp;&nbsp;Software MMIs cause CPUs to enter SMM in SMRAM <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at a fixed location</span><br>
-
-+++
-@title[UEFI Platform Firmware Assumptions 02 ]
-<p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span></p>
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" --> 
- @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;Memory protected by the OS cannot be snooped while<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in use by the OS application or OS driver</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- No protection from MM, VMs or hardware snooping</span><br>
- @fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Flash protected by hardware cannot be modified <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outside of MM after the end of DXE </span><br> 
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about snooping since no secrets are stored in BIOS</span><br>
- <span style="font-size:0.75em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Not worried about flash-altering hardware attacks</span><br>
- @fa[circle gp-bullet-yellow]<span style="font-size:0.9em">&nbsp;&nbsp;Software MMIs cause CPUs to enter SMM in SMRAM <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at a fixed location</span><br>
- @fa[circle gp-bullet-ltgreen]<span style="font-size:0.9em">&nbsp;&nbsp;MMRAM cannot be altered from outside SMM </span>
-
-
-
-
-
+Same as slide 
 
 ---?image=/assets/images/slides/Slide71.JPG
 @title[Key Points for More Secure Software MMI Handlers]
