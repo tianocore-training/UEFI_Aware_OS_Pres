@@ -101,7 +101,7 @@ Review -Boot Execution Flow
 +++?image=/assets/images/slides/Slide9.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
-@title[UEFI Boot Flow review 09]
+@title[UEFI Boot Flow review 04]
 <p align="right"><span class="gold" ><b> UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>Review</b> </span></p>
  
 Note:
@@ -110,11 +110,42 @@ Review -Boot Execution Flow
 Boot to OS with UEFI Services available
 
 
----?image=/assets/images/slides/Slide11.JPG
-<!-- .slide: data-transition="none" -->
+---
 @title[UEFI OS Requirements]
 #### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
  
+@snap[north-west span-35 fragment]
+@css[text-yellow](<br><br>&nbsp; <br>&nbsp;)
+@box[bg-blue text-white  waved  ](<b>UEFI Drivers:</b> Boot devices/console)
+@snapend
+
+@snap[north span-35 fragment]
+@css[text-yellow](<br> <br>&nbsp;<br>&nbsp;)
+@box[bg-pink text-white waved ](<b>UEFI OS Installer</b><br>&nbsp;)
+@snapend
+  
+@snap[north-east span-35 fragment]
+@css[text-yellow](<br><br>&nbsp; <br>&nbsp;)
+@box[bg-green text-white waved ](<b>UEFI OS Loader</b><br>&nbsp;)
+@snapend
+ 
+@snap[south-west span-35 fragment]
+@box[bg-yellow text-blue  waved ](<b>Disk Partition/formats</b>)
+@css[text-yellow]( <br>&nbsp;)
+@snapend
+  
+@snap[south span-35 fragment]
+@box[bg-orange text-white waved ](<b>Firmware Requirements</b><br>)
+@css[text-yellow]( <br>&nbsp;)
+@snapend
+ 
+@snap[south-east span-35 fragment]
+@box[bg-purple text-white waved ](<b>Set Boot Path to Boot UEFI OS</b>)
+@css[text-yellow]( <br>&nbsp;)
+@snapend
+  
+ 
+  
 Note:
 - What is the list of things you need to have in the BIOS/ FW?
 - UEFI drivers for boot devices and console – storage devices / 
@@ -129,62 +160,9 @@ Note:
 - Nvram Large enough to store device path
 
 - After installation, set boot path to boot to OS as default system behavior
-
- 
-+++?image=/assets/images/slides/Slide12.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI OS Requirements 02]
-#### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
-  
-Note:
  
 
-+++?image=/assets/images/slides/Slide13.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI OS Requirements 03]
-#### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
-  
-Note:
- 
-+++?image=/assets/images/slides/Slide14.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI OS Requirements 04]
-#### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
-  
-Note:
- 
-+++?image=/assets/images/slides/Slide15.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI OS Requirements 05]
-#### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
-  
-Note:
- 
-+++?image=/assets/images/slides/Slide16.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI OS Requirements 06]
-#### <p align="right"><span class="gold" >UEFI OS Requirements</span></p>
-  
-Note:
 
-- What is the list of things you need to have in the BIOS/ FW?
-- UEFI drivers for boot devices and console – storage devices / 
-- UEFI loader need / Elilo for Linux - / RH published need to be there
-  - For windows 
-  - Transfers con
-- UEFI installer –  - Requirements WIN has this so far
-- Disk partition and Disk formats - need GPT  / FAT32 disk format
-- Firmware requirements
-- Boot manager
-- BIOS Setup
-- Nvram Large enough to store device path
-
-- After installation, set boot path to boot to OS as default system behavior
  
 ---?image=/assets/images/slides/Slide18.JPG
 <!-- .slide: data-transition="none" -->
@@ -279,42 +257,32 @@ Make sure the “class” terminology is understood here before moving on
 - Performance
 - Extensibility
 
----?image=/assets/images/slides/Slide27.JPG
-<!-- .slide: data-transition="none" -->
+---
 @title[Required UEFI Drivers: OS Install & Boot]
 <p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>Required UEFI Drivers:&nbsp;&nbsp;</b></span><span style="font-size:0.8em" ><font color="#FFC000">OS Install & Boot<font></span></p>
 
-Note:
-- Boot Device: hard drive controller, USB, RAID, Fiber Channel, network, etc. 
-- Console Output: Graphics Output Protocol (GOP) or Serial Console (COM port)
-- Console Input: Keyboard, Mouse, Touch Screen or Serial Console (COM)
-- NVRAM Driver – store boot entry for OS in flash or other NVRAM (not part of boot disk partition)
+
+@snap[north-west span-45 fragment]
+@css[text-yellow]( <br>&nbsp;)
+@box[bg-blue text-white  rounded  ](<span style="font-size:01.52em" ><b>Boot device<b></span><br>&nbsp;)
+@snapend
+
+@snap[north-east span-45 fragment]
+@css[text-yellow](<br><br>&nbsp; <br>&nbsp;<br>&nbsp;)
+@box[bg-pink text-white rounded ](<span style="font-size:01.52em" ><b>Console Output</b></span><br>&nbsp;)
+@snapend
+
+@snap[south-west span-45 fragment]
+@box[bg-yellow text-blue  rounded ](<span style="font-size:01.52em" ><b>Console Input</b></span><br>&nbsp;)
+@css[text-yellow]( <br>&nbsp;<br>&nbsp;<br>&nbsp;)
+@snapend
+
+@snap[south-east span-45 fragment]
+@box[bg-purple text-white rounded ](<span style="font-size:01.52em" ><b>NVRam Driver</b></span><br>&nbsp;)
+
+@snapend
 
 
-
-+++?image=/assets/images/slides/Slide28.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[Required UEFI Drivers: OS Install & Boot 02]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>Required UEFI Drivers:&nbsp;&nbsp;</b></span><span style="font-size:0.8em" ><font color="#FFC000">OS Install & Boot<font></span></p>
-
-Note:
-
-
-+++?image=/assets/images/slides/Slide29.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[Required UEFI Drivers: OS Install & Boot 03]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>Required UEFI Drivers:&nbsp;&nbsp;</b></span><span style="font-size:0.8em" ><font color="#FFC000">OS Install & Boot<font></span></p>
-
-Note:
-
-
-+++?image=/assets/images/slides/Slide30.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[Required UEFI Drivers: OS Install & Boot 04]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>Required UEFI Drivers:&nbsp;&nbsp;</b></span><span style="font-size:0.8em" ><font color="#FFC000">OS Install & Boot<font></span></p>
 
 Note:
 - Boot Device: hard drive controller, USB, RAID, Fiber Channel, network, etc. 
@@ -326,15 +294,26 @@ Note:
 ---
 @title[UEFI OS Loader/Installer]
 #### <p align="right"><span class="gold" >UEFI OS Loader</span></p>
+
+@snap[north-west span-100 fragment]
+@css[text-yellow]( <br>&nbsp;<br>)
 @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;OS install process includes UEFI loader<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:0.7em"><font face="Courier New" color="#FFFF00">/efi/boot/bootx64.efi    /efi/redhat/grub.efi</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:0.7em"><font  color="#FFFF00">`/efi/boot/bootx64.efi`  `/efi/redhat/grub.efi`</font></span><br>
 @fa[circle gp-bullet-gold]<span style="font-size:0.9em">&nbsp;&nbsp;Call UEFI boot & runtime services to start OS</span> <br>
 @fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Exit UEFI Boot Services</span><br>
 @fa[circle gp-bullet-green]<span style="font-size:0.9em">&nbsp;&nbsp;Transfer control to native OS</span><br>
+
+@snap[east span-60 fragment]
+<br>
 #### <p align="right"><span class="gold" >UEFI OS Installer</span></p>
+@snapend
+
+@snap[west span-100 fragment]
+@css[text-yellow]( <br>&nbsp;<br><br><br><br><br>)
 @fa[circle gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;Discover UEFI storage devices</span> <br>
 @fa[circle gp-bullet-gold]<span style="font-size:0.9em">&nbsp;&nbsp;Setup storage device: GPT w/ FAT32 boot partition</span> <br>
-@fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Create boot variable &nbsp;&nbsp;<font face="Courier New" color="#FFFF00">BootXXXX</fon></span><br>
+@fa[circle gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Create boot variable &nbsp;&nbsp;<font color="#FFFF00">`BootXXXX`</font></span><br>
+@snapend
 
 Note:
 
@@ -407,10 +386,16 @@ Os loader needs to be here
 
 Note:
 
+As seen on this slide , Only Runtime services are available during the UEFI aware OS.  
+
+Boot services are no longer available after the OS Loader calls ExitBootServices().
+
+It is the responsibility of the OS Loader to call ExitBootServices() event.  
 ---
 
 @title[Accessing RT Services from Windows ]
-### <p align="right"><span class="gold" >Accessing RT services from Windows API</span></p>
+<br>
+#### <p align="right"><span class="gold" >@fa[windows gp-bullet-cyan ] &nbsp;&nbsp; Accessing RT services from Windows API</span></p>
 
 - <span style="font-size:0.8em" >GetFirmwareEnvironmentVariable: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724325(v=vs.85).aspx">MSDN Link</a></span>
 - <span style="font-size:0.8em" >SetFirmwareEnvironmentVariable: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724934(v=vs.85).aspx">MSDN Link</a></span>
@@ -436,6 +421,10 @@ Note:
 Note:
 
 - Code example:
+
+This is just a code example of an application written for Windows
+
+The links will help to find more actual examples
 
 <pre>
 
@@ -491,7 +480,7 @@ Note:
 
 @title[Accessing RT Services from Linux ]
 <br>
-### <p align="right"><span class="gold" >Accessing RT services from Linux </span></p>
+#### <p align="right"><span class="gold" >@fa[linux gp-bullet-white fa-2x] &nbsp;&nbsp; Accessing RT services from Linux </span></p>
 
 <span style="font-size:0.9em" > Firmware Test Suite, it includes a Linux kernel driver to help with it's interactions with UEFI. Note that this is a Linux-centric test suite, solution won't work for other OSes.</span>
 - <span style="font-size:0.8em" > http://kernel.ubuntu.com/git/hwe/fwts.git</span>
@@ -533,26 +522,46 @@ Note:
 ## <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Security with UEFI</span>
 <span style="font-size:0.9em" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How does UEFI  ensure the Operating System is trusted?</span>
 
----?image=/assets/images/slides/Slide36.JPG
-@title[Boot Security Technologies]
-### <p align="right"><span class="gold" >Boot Security Technologies</span></p>
+
+
+---
+#### <p align="right"><span class="gold" >Boot Security Technologies</span></p>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<table border="0" width="100%">
+	<tr>
+		<td><b>Hardware Root of Trust</b></td>
+		<td><span style="font-size:0.80em" >Boot Guard,  Intel&reg; TXT <br>&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td><b>Measured Boot&nbsp;</b></td>
+		<td><span style="font-size:0.80em" >Using TPM<sup>1</sup> to store hash values <br>&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td><b>Verified Boot&nbsp;</b></td>
+		<td><span style="font-size:0.80em" >Boot Guard &nbsp;&nbsp; + <br><b>UEFI Secure Boot </b>&nbsp;</span></td>
+	</tr>
+</table>
+
 <br>
 <span style="font-size:0.5em" >Resources: https://firmwaresecurity.com/2015/07/29/survey-of-boot-security-technologies/ </span>
 
+@snap[midpoint span-35 fragment]
+<br>
+<br>
+<br>
+<br>
+<span style="font-size:02.5em" >@color[#00ffff](&rBarr;)&nbsp;&nbsp; &nbsp;</span>&nbsp;
+@snapend
+
+@snap[south-east span-100]
+<span style="font-size:0.45em" ><sup>1</sup>TPM - Trusted Platform Module<br><br></span>
+@snapend
+
+
 Note:
 #### Intel Boot Guard: 
-When your CPU starts up, it reads some code out of flash and executes it. With Intel Boot Guard, the CPU verifies a signature on that flash code before executing the reset vector
+When your CPU starts up, it reads some code out of flash and executes it. 
+With Intel Boot Guard, the CPU verifies a signature on that flash code before executing the reset vector
 
 #### Intel TXT Trusted Execution Technology 
 
@@ -569,11 +578,34 @@ In the case of Measure Boot, the Trusted Platform Module is used to record these
 
 PCRs are registers in the TPM that are cleared only at hardware reset, and cannot be directly written
 
-
----?image=/assets/images/slides/Slide38.JPG
-<!-- .slide: data-transition="none" -->
+---
 @title[Hardware root of Trust ]
-### <p align="right"><span class="gold" >Hardware root of Trust </span></p>
+#### <p align="right"><span class="gold" >Hardware root of Trust </span></p>
+
+<table id="recTable">
+	<tr>
+		<td bgcolor="#121212"><b>Boot Guard&nbsp;&nbsp;&nbsp;</b></td>
+		<td bgcolor="#121212" width="50%"><b>Intel&reg; TXT </b></td>
+	</tr>
+	<tr>
+		<td><span style="font-size:0.75em" >CPU verifies signature<br><br>Verification occurs before BIOS code starts<br><br>Hash of signature is fused in CPU&nbsp;</span></td>
+		<td width="50%"><span style="font-size:0.75em" >Uses a Trusted Platform Module (TPM) & cryptographic <br><br>Provides Measurements&nbsp;</span></td>
+	</tr>
+</table>
+
+@snap[south-west span-45 fragment]
+@box[bg-purple text-white rounded  ](<span style="font-size:01.50em" ><b> Verification</b>&nbsp;</span>)
+<br>
+<br>
+
+@snapend
+
+@snap[south-east span-45 fragment]
+@box[bg-purple text-white rounded  ](<span style="font-size:01.50em" > <b>Measurements</b>&nbsp;</span>)
+<br>
+<br>
+
+@snapend
 
 
 Note:
@@ -586,21 +618,6 @@ This has genuine security benefits. It's no longer possible for an attacker to s
 #### Intel TXT Trusted Execution Technology 
 TXT - uses a Trusted Platform Module (TPM) and cryptographic techniques to provide measurements of software and platform components so that system software as well as local and remote management applications may use those measurements to make trust decisions. This technology is based on an industry initiative by the Trusted Computing Group (TCG) to promote safer computing. It defends against software-based attacks aimed at stealing sensitive information by corrupting system or BIOS code, or modifying the platform's configuration.
 
-+++?image=/assets/images/slides/Slide39.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[Hardware root of Trust ]
-### <p align="right"><span class="gold" >Hardware root of Trust </span></p>
-
-Note:
-
-#### Intel Boot Guard: 
-With Intel Boot Guard, the CPU verifies a signature on flash code before executing. The hash of the public half of the signing key is flashed into fuses on the CPU. It is the system vendor that owns this key and chooses to flash it into the CPU, not Intel. 
-This has genuine security benefits. It's no longer possible for an attacker to simply modify or replace the firmware - they have to find some other way to trick it into executing arbitrary code, and over time these will be closed off. But in the process, the system vendor has prevented the user from being able to make an informed choice to replace their system firmware
-
-
-#### Intel TXT Trusted Execution Technology 
-TXT - uses a Trusted Platform Module (TPM) and cryptographic techniques to provide measurements of software and platform components so that system software as well as local and remote management applications may use those measurements to make trust decisions. This technology is based on an industry initiative by the Trusted Computing Group (TCG) to promote safer computing. It defends against software-based attacks aimed at stealing sensitive information by corrupting system or BIOS code, or modifying the platform's configuration.
 
 ---?image=/assets/images/slides/Slide41.JPG
 <!-- .slide: data-transition="none" -->
