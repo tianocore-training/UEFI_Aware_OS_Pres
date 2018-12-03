@@ -116,31 +116,31 @@ Boot to OS with UEFI Services available
  
 @snap[north-west span-35 fragment]
 @css[text-yellow](<br><br>&nbsp; <br>&nbsp;)
-@box[bg-blue text-white  waved  ](<b>UEFI Drivers:</b> Boot devices/console)
+@box[bg-lt-blue-pp text-white  waved  ](<b>UEFI Drivers:</b> Boot devices/console<br>&nbsp;)
 @snapend
 
 @snap[north span-35 fragment]
 @css[text-yellow](<br> <br>&nbsp;<br>&nbsp;)
-@box[bg-pink text-white waved ](<b>UEFI OS Installer</b><br>&nbsp;)
+@box[bg-royal text-white waved ](<b>UEFI OS Installer</b><br><br>&nbsp;)
 @snapend
   
 @snap[north-east span-35 fragment]
 @css[text-yellow](<br><br>&nbsp; <br>&nbsp;)
-@box[bg-green text-white waved ](<b>UEFI OS Loader</b><br>&nbsp;)
+@box[bg-green-pp text-white waved ](<b>UEFI OS Loader</b><br><br>&nbsp;)
 @snapend
  
 @snap[south-west span-35 fragment]
-@box[bg-yellow text-blue  waved ](<b>Disk Partition/formats</b>)
+@box[bg-yellow text-blue  waved ](<b>Disk Partition/formats</b><br>&nbsp;)
 @css[text-yellow]( <br>&nbsp;)
 @snapend
   
 @snap[south span-35 fragment]
-@box[bg-orange text-white waved ](<b>Firmware Requirements</b><br>)
+@box[bg-brick text-white waved ](<b>Firmware Requirements</b><br><br>)
 @css[text-yellow]( <br>&nbsp;)
 @snapend
  
 @snap[south-east span-35 fragment]
-@box[bg-purple text-white waved ](<b>Set Boot Path to Boot UEFI OS</b>)
+@box[bg-purple-pp text-white waved ](<b>Set Boot Path to Boot UEFI OS</b><br>&nbsp;)
 @css[text-yellow]( <br>&nbsp;)
 @snapend
   
@@ -162,84 +162,97 @@ Note:
 - After installation, set boot path to boot to OS as default system behavior
  
 
-
- 
----?image=/assets/images/slides/Slide18.JPG
+---
 <!-- .slide: data-transition="none" -->
 @title[UEFI System Classes ]
 <p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
 
-Note:
-Make sure the “class” terminology is understood here before moving on
+@snap[north-west span-45 fragment]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-brick text-white    ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 0</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 ONLY<br>&nbsp;&nbsp;&nbsp;&nbsp;Legacy BIOS &lpar;16 bit&rpar;<br>&nbsp;&nbsp;&nbsp;&nbsp;No UEFI Interfaces<br>&nbsp;</span></p>)
+@snapend
 
-### Classes 0-2:
-- Limited Benefits
-- OEMs/ODMs Internal
-- Development Optimization
-  -  & Code Organization
+@snap[north-east span-45 fragment]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-green-pp text-white  ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 1</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 ONLY<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;Only legacy BIOS <b>runtime</b> inteface<br>&nbsp;</span></p>)
+@snapend
 
-### Class 3+
-- Full Benefits
-- UEFI Innovation
-- Performance
-- Extensibility
+@snap[south-west span-45 fragment]
+@box[bg-purple-pp text-white   ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 2</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 or UEFI<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;legacy BIOS runtime inteface w/ <b>CSM</b><br>&nbsp;</span></p>)
+@css[text-yellow]( &nbsp;)
+@snapend
+
+@snap[south-east span-55 fragment]
+@box[bg-grey-50 text-black](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;<b>Limited Benefits</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;OEMs/ODMs Internal <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;Double code development <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;Coompromised security <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - MBR exposure<br>&nbsp;</span></p>)
+@css[text-yellow]( &nbsp;)
+@snapend
 
 
-
-
-+++?image=/assets/images/slides/Slide19.JPG
++++
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI System Classes 02]
 <p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
 
 
-Note:
+@snap[north-west span-45 ]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-brick text-white    ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 0</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 ONLY<br>&nbsp;&nbsp;&nbsp;&nbsp;Legacy BIOS &lpar;16 bit&rpar;<br>&nbsp;&nbsp;&nbsp;&nbsp;No UEFI Interfaces<br>&nbsp;</span></p>)
+@snapend
+
+@snap[north-east span-45 ]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-green-pp text-white  ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 1</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 ONLY<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;Only legacy BIOS <b>runtime</b> inteface<br>&nbsp;</span></p>)
+@snapend
+
+@snap[south-west span-45 ]
+@box[bg-purple-pp text-white   ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 2</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots Legacy - int 19 or UEFI<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;legacy BIOS runtime inteface w/ <b>CSM</b><br>&nbsp;</span></p>)
+@css[text-yellow]( &nbsp;)
+@snapend
 
 
-+++?image=/assets/images/slides/Slide20.JPG
+@snap[south-east span-45 ]
+@box[bg-royal text-white   ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 3</b></span><span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots <b>Only</b> UEFI<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;Only runtime UEFI intefaces<br>&nbsp;</span></p>)
+@css[text-yellow]( &nbsp;)
+@snapend
+
++++
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
-@title[UEFI System Classes 03]
+@title[UEFI System Classes 02]
 <p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
 
 
-Note:
+@snap[north-west span-45 ]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-grey-50 text-white    ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@color[yellow](<b>Full Benefits</b>)</span><span style="font-size:0.7em" ><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;UEFI Innovation<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;Smaller code size / Validation<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&check;</b>&nbsp;&nbsp;Extensiblitiy<br><br><br><br><br><br><br><br>&nbsp;</span></p>)
+@snapend
 
-+++?image=/assets/images/slides/Slide21.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI System Classes 04]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
-
-
-Note:
-
-
-+++?image=/assets/images/slides/Slide23.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI System Classes 05]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
+@snap[north-east span-45 ]
+@css[text-yellow](<br>&nbsp; <br>&nbsp;)
+@box[bg-royal text-white   ](<p align="left" style="line-height:60%"><span style="font-size:01.25em" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UEFI Class 3</b></span><span style="font-size:0.7em" ><br><br>&nbsp;&nbsp;&nbsp;&nbsp;Boots <b>Only</b> UEFI<br>&nbsp;&nbsp;&nbsp;&nbsp;Uses UEFI / PI Interfaces <br>&nbsp;&nbsp;&nbsp;&nbsp;Only runtime UEFI intefaces<br><br><br><br><br><br><br><br>&nbsp;</span></p>)
+@snapend
 
 
-Note:
+
+@snap[south-west span-45 fragment]
+<p align="left" style="line-height:60%">&nbsp;&nbsp;@color[yellow](<b>Only Class after 2020</b>)<span style="font-size:0.6em" ><br>&nbsp;&nbsp;&nbsp;&nbsp;@color[white](Enabling <b>Secure Boot</b> creates <br>&nbsp;&nbsp;&nbsp;&nbsp;another class&nbsp;)</span></p>
+<br><br>&nbsp;
+@snapend
 
 
-+++?image=/assets/images/slides/Slide24.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI System Classes 06]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
-
-
-Note:
-
-+++?image=/assets/images/slides/Slide25.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI System Classes 07]
-<p align="right"><span style="font-size:01.2em" ><font color="#e49436"><b>UEFI System Classes&nbsp;&nbsp;</b></span><span style="font-size:0.6em" ><font color="#FFC000">(based on firmware interfaces)<font></span></p>
+@snap[north-east span-50 fragment]
+<br>
+<br>
+<br>
+<br>
+<span style="font-size:02.25em" >@color[#ff00ff](<b>+</b>)&nbsp;&nbsp;</span>
+<br>
+<br>
+<br>
+<br>
+<p align="left" style="line-height:60%"><span style="font-size:02.0em" >@color[#ff00ff](&#10132;)</span><span style="font-size:0.8em" >&nbsp;&nbsp;&nbsp;@color[white](<b>UEFI Secure Boot "ON"</b> )<br></span> </p>
+@snapend
 
 
 Note:
@@ -256,6 +269,7 @@ Make sure the “class” terminology is understood here before moving on
 - UEFI Innovation
 - Performance
 - Extensibility
+
 
 ---
 @title[Required UEFI Drivers: OS Install & Boot]
@@ -264,21 +278,21 @@ Make sure the “class” terminology is understood here before moving on
 
 @snap[north-west span-45 fragment]
 @css[text-yellow]( <br>&nbsp;)
-@box[bg-blue text-white  rounded  ](<span style="font-size:01.52em" ><b>Boot device<b></span><br>&nbsp;)
+@box[bg-royal text-white  rounded  ](<span style="font-size:01.52em" ><b>Boot device<b></span><br>&nbsp;)
 @snapend
 
 @snap[north-east span-45 fragment]
 @css[text-yellow](<br><br>&nbsp; <br>&nbsp;<br>&nbsp;)
-@box[bg-pink text-white rounded ](<span style="font-size:01.52em" ><b>Console Output</b></span><br>&nbsp;)
+@box[bg-green-pp text-white rounded ](<span style="font-size:01.52em" ><b>Console Output</b></span><br>&nbsp;)
 @snapend
 
 @snap[south-west span-45 fragment]
-@box[bg-yellow text-blue  rounded ](<span style="font-size:01.52em" ><b>Console Input</b></span><br>&nbsp;)
+@box[bg-brick text-white  rounded ](<span style="font-size:01.52em" ><b>Console Input</b></span><br>&nbsp;)
 @css[text-yellow]( <br>&nbsp;<br>&nbsp;<br>&nbsp;)
 @snapend
 
 @snap[south-east span-45 fragment]
-@box[bg-purple text-white rounded ](<span style="font-size:01.52em" ><b>NVRam Driver</b></span><br>&nbsp;)
+@box[bg-purple-pp text-white rounded ](<span style="font-size:01.52em" ><b>NVRam Driver</b></span><br>&nbsp;)
 
 @snapend
 
@@ -737,10 +751,78 @@ Note:
 
 - In a Secure Boot chain, each step in the process checks a cryptographic signature on the executable of the next step before it’s launched. Thus, the BIOS will check a signature on the loader, and the loader will check signatures on all the kernel objects that it loads. The objects in the chain are usually signed by the software manufacturer, using private keys that match up with public keys already in the BIOS. If any of the software modules in the boot chain have been hacked, then the signatures won’t match, and the device won’t boot the image.Because the images must be signed by the manufacturer, it’s generally impractical to sign any files generated by the platform user (such as config files).
 
-
----?image=/assets/images/slides/Slide48.JPG
+---
 @title[Authenticated Variables]
 ### <p align="right"><span class="gold" >Authenticated Variables</span></p>
+
+@snap[north-west span-45]
+<br>
+<br>
+@box[bg-grey-35 text-white  rounded ](<span style="font-size:01.2em" ><b>&nbsp;</b></span> <br><br><br><br><br><br><br><br><br><br> )
+@snapend
+
+
+@snap[north-west span-30 ]
+<br>
+<br>
+@box[bg-royal text-white  rounded ](<span style="font-size:01.2em" ><b>PK</b></span>)
+@snapend
+
+
+@snap[north-west span-35 ]
+<br>
+<br>
+<br>
+<br>
+<br>
+@box[bg-gold2 text-white  rounded ](<span style="font-size:01.2em" ><b>KEK</b></span>)
+@snapend
+
+@snap[north-west span-40 ]
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@box[bg-white text-black  rounded ](<span style="font-size:01.2em" ><b>DB</b></span>)
+@snapend
+
+@snap[north-west span-40]
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@box[bg-black text-white  rounded ](<span style="font-size:01.2em" ><b>DBX</b></span>)
+@snapend
+
+
+
+@snap[north-east span-40 fragment]
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@box[bg-navy text-white  rounded ](<span style="font-size:01.2em" ><b>`SetupMode`</b></span>)
+<br>
+@box[bg-red-pp text-white  rounded ](<span style="font-size:01.2em" ><b>`SecureBoot`</b></span>)
+@snapend
+
+
+@snap[south span-100 fragment]
+![SecureBoot](/assets/images/SecureBoot_shell.png)
+@snapend
 
 Note:
 
@@ -1001,22 +1083,18 @@ Note:
   - BIOS vendor applications (flash utilities, setup access)
   - OEM/ODM applications 
 
+  
+  
+
+  
 ---?image=/assets/images/slides/Slide68_1.JPG
 @title[Why MMI Vulnerabilities )]
 <p align="right"><span class="gold" ><b>Why are Software MMI Vulnerabilities Dangerous?</b></span></p>
+@snap[north-west span-60 fragment ]
 <br>
-
-Note: 
-
-
-+++?image=/assets/images/slides/Slide68_1.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" --> 
-@title[Why MMI Vulnerabilities ) 02]
-<p align="right"><span class="gold" ><b>Why are Software MMI Vulnerabilities Dangerous?</b></span></p>
+<br>
 <b><i>@color[yellow](Because . . .)</i></b><br>
 <span style="font-size:0.9em" >Software MMIs can be asked to perform: </span>
-<div class="left1">
      <ul>
 <li><span style="font-size:0.8em" >Privileged operations: </span><span style="font-size:0.6em" ><font color="#87E2A9">Flash BIOS, flash EC, write to MMIO, write to MMRAM, etc. </font></span></li>
 <li><span style="font-size:0.8em" >Overwrite OS code/data </span></li>
@@ -1024,12 +1102,13 @@ Note:
 <li><span style="font-size:0.8em" >Copy protected firmware data to another unprotected location</span></li>
 <li><span style="font-size:0.8em" >Overwrite BIOS code/data  </span></li>
 </ul>
-<div class="right1">
-   <span style="font-size:01.5em" ><font color="yellow"><b>      </b></font></span>
-</div>
+
+@snapend
+
 
 
 Note:
+
 
 same as Slide 
 
