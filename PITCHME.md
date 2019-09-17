@@ -10,7 +10,7 @@
 Note:
   PITCHME.md for UEFI / EDK II Training  UEFI Aware OS
 
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -1180,37 +1180,15 @@ Note:
 Section
 
 
----?image=/assets/images/slides/Slide77.JPG
-<!-- .slide: data-transition="none" -->		 
-@title[UEFI Boot Flow coreboot]
-<p align="right"><span class="gold" ><b> UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>coreboot</b> </span></p>
+---?image=/assets/images/slides/Slide46_1.JPG
+@title[Intel FSP and Coreboot Diagram]
+
+<p align="center" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.75em"> 
+Intel®  FSP "Produced" to <br> "Consuming" Intel® Architecture Firmware </span>
+
 
 Note:
-SEC Function <Br>
 
-Review -Boot Execution Flow
-
-+++?image=/assets/images/slides/Slide78.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI Boot Flow coreboot 02]
-<p align="right"><span class="gold" ><b> UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>coreboot</b> </span></p>
-
-Note:
-SEC Function <Br>
-
-Review -Boot Execution Flow
-
-+++?image=/assets/images/slides/Slide79.JPG
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[UEFI Boot Flow coreboot 03]
-<p align="right"><span class="gold" ><b> UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>coreboot</b> </span></p>
-
-Note:
-SEC Function <Br>
-
-Review -Boot Execution Flow
 
 ---?image=/assets/images/slides/Slide81.JPG
 <!-- .slide: data-transition="none" -->		 
@@ -1297,7 +1275,7 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY 
 OF SUCH DAMAGE.
 
-Copyright (c) 2018, Intel Corporation. All rights reserved.
+Copyright (c) 2019, Intel Corporation. All rights reserved.
 **/
 
 ```
